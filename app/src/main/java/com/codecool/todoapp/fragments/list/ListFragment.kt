@@ -21,6 +21,10 @@ class ListFragment : Fragment() {
             findNavController().navigate(R.id.action_listFragment_to_addFragment)
         }
 
+        view.list_layout.setOnClickListener {
+            findNavController().navigate(R.id.action_listFragment_to_updateFragment)
+        }
+
         return view
     }
 
