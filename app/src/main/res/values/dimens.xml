@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="fab_margin_end">24dp</dimen>
+    <dimen name="fab_margin">24dp</dimen>
     <dimen name="no_data_textview_margintop">12dp</dimen>
     <dimen name="no_data_text_size">16sp</dimen>
     <dimen name="layout_padding">24dp</dimen>
@@ -9,7 +9,6 @@
     <dimen name="add_padding_big">24dp</dimen>
     <dimen name="add_padding_small">16dp</dimen>
     <dimen name="spinner_padding">16dp</dimen>
-    <dimen name="fab_margin_bottom">52dp</dimen>
     <dimen name="stroke">1dp</dimen>
     <dimen name="radius">5dp</dimen>
 </resources>
