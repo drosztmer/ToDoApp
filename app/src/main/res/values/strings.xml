@@ -5,4 +5,12 @@
     <string name="listfragment_label">ToDo List</string>
     <string name="addfragment_label">Add</string>
     <string name="updatefragment_label">Update</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    
+    <string-array name="priorities">
+        <item>High Priority</item>
+        <item>Medium Priority</item>
+        <item>Low Priority</item>
+    </string-array>
 </resources>
