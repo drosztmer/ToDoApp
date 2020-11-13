@@ -1,6 +1,7 @@
 package com.codecool.todoapp.data
 
 import androidx.room.TypeConverter
+import com.codecool.todoapp.data.models.Priority
 
 class Converter {
 

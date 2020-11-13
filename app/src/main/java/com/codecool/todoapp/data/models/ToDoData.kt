@@ -1,4 +1,4 @@
-package com.codecool.todoapp.data
+package com.codecool.todoapp.data.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

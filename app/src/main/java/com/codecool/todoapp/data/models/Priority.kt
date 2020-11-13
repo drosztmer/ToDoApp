@@ -1,4 +1,4 @@
-package com.codecool.todoapp.data
+package com.codecool.todoapp.data.models
 
 enum class Priority {
     HIGH,
