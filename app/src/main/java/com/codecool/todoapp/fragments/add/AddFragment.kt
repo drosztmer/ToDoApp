@@ -11,11 +11,13 @@ import com.codecool.todoapp.R
 import com.codecool.todoapp.data.models.Priority
 import com.codecool.todoapp.data.models.ToDoData
 import com.codecool.todoapp.data.viewmodel.ToDoViewModel
+import com.codecool.todoapp.fragments.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 
 class AddFragment : Fragment() {
 
     private val mTodoViewModel: ToDoViewModel by viewModels()
+    private val mSharedViewModel: SharedViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,9 +46,9 @@ class AddFragment : Fragment() {
         val mPriority = priorities_spinner.selectedItem.toString()
         val mDescription = description_et.text.toString()
 
-        val validation = verifyDataFromUser(mTitle, mDescription)
+        val validation = mSharedViewModel.verifyDataFromUser(mTitle, mDescription)
         if (validation) {
-            val newData = ToDoData(0, mTitle, parsePriority(mPriority), mDescription)
+            val newData = ToDoData(0, mTitle, mSharedViewModel.parsePriority(mPriority), mDescription)
             mTodoViewModel.insertData(newData)
             Toast.makeText(requireContext(), getString(R.string.successfully_added), Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_addFragment_to_listFragment)
@@ -56,20 +58,4 @@ class AddFragment : Fragment() {
 
     }
 
-    private fun verifyDataFromUser(title: String, description: String): Boolean {
-        return if (TextUtils.isEmpty(title) || TextUtils.isEmpty(description)) {
-            false
-        } else {
-            !(title.isEmpty() || description.isEmpty())
-        }
-    }
-
-    private fun parsePriority(priority: String): Priority {
-        return when (priority) {
-            getString(R.string.high_priority) -> { Priority.HIGH }
-            getString(R.string.medium_priority) -> { Priority.MEDIUM }
-            getString(R.string.low_priority) -> { Priority.LOW }
-            else -> Priority.LOW
-        }
-    }
 }
