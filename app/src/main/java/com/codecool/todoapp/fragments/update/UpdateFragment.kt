@@ -9,13 +9,11 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.codecool.todoapp.R
-import com.codecool.todoapp.data.models.Priority
 import com.codecool.todoapp.data.models.ToDoData
 import com.codecool.todoapp.data.viewmodel.ToDoViewModel
 import com.codecool.todoapp.fragments.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_update.*
 import kotlinx.android.synthetic.main.fragment_update.view.*
-import kotlinx.android.synthetic.main.row_layout.view.*
 
 class UpdateFragment : Fragment() {
 
@@ -96,7 +94,7 @@ class UpdateFragment : Fragment() {
         builder.setNegativeButton(getString(R.string.no)) { _, _ -> }
         val alertTitle = getString(R.string.alert_delete_title)
         val questionMark = getString(R.string.questionmark)
-        val confirmQuestion = getString(R.string.confirm_question)
+        val confirmQuestion = getString(R.string.confirm_delete)
         builder.setTitle(alertTitle + "'${args.currentItem.title}'" + questionMark)
         builder.setMessage(confirmQuestion + "'${args.currentItem.title}'" + questionMark)
         builder.create().show()
