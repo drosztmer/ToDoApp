@@ -20,6 +20,7 @@
     <string name="low_priority">Low Priority</string>
     <string name="successfully_added">Todo added successfully!</string>
     <string name="fill_out">Please, fill out all fields!</string>
+    <string name="succesfully_updated">Successfully updated!</string>
 
     <string-array name="priorities">
         <item>High Priority</item>
