@@ -11,11 +11,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codecool.todoapp.R
 import com.codecool.todoapp.data.viewmodel.ToDoViewModel
+import com.codecool.todoapp.fragments.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_list.view.*
 
 class ListFragment : Fragment() {
 
     private val mToDoViewModel: ToDoViewModel by viewModels()
+    private val mSharedViewModel: SharedViewModel by viewModels()
 
     private val listAdapter: ListAdapter by lazy { ListAdapter() }
 
@@ -32,7 +34,12 @@ class ListFragment : Fragment() {
         }
 
         mToDoViewModel.getAllData.observe(viewLifecycleOwner, Observer { data ->
+            mSharedViewModel.checkIfDatabaseEmpty(data)
             listAdapter.setData(data)
+        })
+
+        mSharedViewModel.emptyDatabase.observe(viewLifecycleOwner, Observer {
+            showEmptyDatabaseViews(it)
         })
 
         view.floatingActionButton.setOnClickListener {
@@ -41,6 +48,16 @@ class ListFragment : Fragment() {
 
         setHasOptionsMenu(true)
         return view
+    }
+
+    private fun showEmptyDatabaseViews(emptyDatabase: Boolean) {
+        if (emptyDatabase) {
+            view?.no_data_imageview?.visibility = View.VISIBLE
+            view?.no_data_textview?.visibility = View.VISIBLE
+        } else {
+            view?.no_data_imageview?.visibility = View.INVISIBLE
+            view?.no_data_textview?.visibility = View.INVISIBLE
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
