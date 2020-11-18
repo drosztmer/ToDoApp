@@ -11,4 +11,18 @@
     <dimen name="spinner_padding">16dp</dimen>
     <dimen name="stroke">1dp</dimen>
     <dimen name="radius">5dp</dimen>
+    <dimen name="row_layout_margin">4dp</dimen>
+    <dimen name="item_background_stroke_width">1dp</dimen>
+    <dimen name="item_background_corner_radius">16dp</dimen>
+    <dimen name="priority_indicator_width">16dp</dimen>
+    <dimen name="priority_indicator_height">16dp</dimen>
+    <dimen name="priority_indicator_margin">16dp</dimen>
+    <dimen name="priority_indicator_radius">8dp</dimen>
+    <dimen name="title_text_marginstart">20dp</dimen>
+    <dimen name="title_text_margintop">16dp</dimen>
+    <dimen name="title_txt_size">20sp</dimen>
+    <dimen name="description_txt_margintop">8dp</dimen>
+    <dimen name="description_txt_marginbottom">16dp</dimen>
+    <dimen name="description_txt_marginend">16dp</dimen>
+    <dimen name="recyclerview_paddingtop">8dp</dimen>
 </resources>

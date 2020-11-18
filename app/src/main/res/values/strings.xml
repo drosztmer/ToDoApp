@@ -15,6 +15,21 @@
     <string name="add">Add</string>
     <string name="save">Save</string>
     <string name="delete">Delete</string>
+    <string name="high_priority">High Priority</string>
+    <string name="medium_priority">Medium Priority</string>
+    <string name="low_priority">Low Priority</string>
+    <string name="successfully_added">Todo added successfully!</string>
+    <string name="fill_out">Please, fill out all fields!</string>
+    <string name="succesfully_updated">Successfully updated!</string>
+    <string name="yes">Yes</string>
+    <string name="successfully_removed">"Successfully removed: "</string>
+    <string name="alert_delete_title">"Delete "</string>
+    <string name="questionmark">\?</string>
+    <string name="confirm_delete">"Are you sure you want to delete "</string>
+    <string name="no">No</string>
+    <string name="successfully_removed_everything">Successfully removed everything!</string>
+    <string name="alert_delete_all_title">Delete everything?</string>
+    <string name="confirm_delete_all">Are you sure you want to remove everything?</string>
 
     <string-array name="priorities">
         <item>High Priority</item>
