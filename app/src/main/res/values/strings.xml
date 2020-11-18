@@ -21,6 +21,12 @@
     <string name="successfully_added">Todo added successfully!</string>
     <string name="fill_out">Please, fill out all fields!</string>
     <string name="succesfully_updated">Successfully updated!</string>
+    <string name="yes">Yes</string>
+    <string name="successfully_removed">"Successfully removed: "</string>
+    <string name="alert_delete_title">"Delete "</string>
+    <string name="questionmark">\?</string>
+    <string name="confirm_question">"Are you sure you want to delete "</string>
+    <string name="no">No</string>
 
     <string-array name="priorities">
         <item>High Priority</item>
