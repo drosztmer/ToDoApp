@@ -40,15 +40,16 @@
 
             <TextView
                 android:id="@+id/title_txt"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/title_text_marginstart"
                 android:layout_marginTop="@dimen/title_text_margintop"
+                android:layout_marginEnd="@dimen/title_text_marginend"
                 android:text="@{toDoData.title}"
-                android:textStyle="bold"
-                android:maxLength="20"
                 android:textColor="@color/darkGray"
                 android:textSize="@dimen/title_txt_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/priority_indicator"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
