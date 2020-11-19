@@ -17,6 +17,7 @@ import com.codecool.todoapp.databinding.FragmentListBinding
 import com.codecool.todoapp.fragments.SharedViewModel
 import com.codecool.todoapp.fragments.list.adapter.ListAdapter
 import com.google.android.material.snackbar.Snackbar
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 
 class ListFragment : Fragment() {
 
@@ -52,6 +53,9 @@ class ListFragment : Fragment() {
         recyclerView.apply {
             adapter = listAdapter
             layoutManager = LinearLayoutManager(requireActivity())
+            itemAnimator = SlideInUpAnimator().apply {
+                addDuration = 300
+            }
             swipeToDelete(this)
         }
     }
