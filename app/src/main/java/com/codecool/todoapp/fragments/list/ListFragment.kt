@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.codecool.todoapp.R
 import com.codecool.todoapp.data.models.ToDoData
 import com.codecool.todoapp.data.viewmodel.ToDoViewModel
@@ -53,7 +54,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
         val recyclerView = binding.recyclerView
         recyclerView.apply {
             adapter = listAdapter
-            layoutManager = LinearLayoutManager(requireActivity())
+            layoutManager = StaggeredGridLayoutManager(resources.getInteger(R.integer.columns), StaggeredGridLayoutManager.VERTICAL)
             itemAnimator = SlideInUpAnimator().apply {
                 addDuration = 300
             }
@@ -67,21 +68,20 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
                 val deletedItem = listAdapter.dataList[viewHolder.adapterPosition]
                 mToDoViewModel.deleteItem(deletedItem)
                 listAdapter.notifyItemRemoved(viewHolder.adapterPosition)
-                restoreDeletedData(viewHolder.itemView, deletedItem, viewHolder.adapterPosition)
+                restoreDeletedData(viewHolder.itemView, deletedItem)
             }
         }
         val itemTouchHelper = ItemTouchHelper(swipeToDeleteCallback)
         itemTouchHelper.attachToRecyclerView(recyclerView)
     }
 
-    private fun restoreDeletedData(view: View, deletedItem: ToDoData, position: Int) {
+    private fun restoreDeletedData(view: View, deletedItem: ToDoData) {
         val deleteMessage = getString(R.string.deleted)
         val snackbar = Snackbar.make(
             view, deleteMessage + "'${deletedItem.title}'", Snackbar.LENGTH_LONG
         )
         snackbar.setAction(getString(R.string.undo)) {
             mToDoViewModel.insertData(deletedItem)
-            listAdapter.notifyItemChanged(position)
         }
         snackbar.show()
     }
