@@ -14,7 +14,6 @@ import com.codecool.todoapp.data.viewmodel.ToDoViewModel
 import com.codecool.todoapp.databinding.FragmentUpdateBinding
 import com.codecool.todoapp.fragments.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_update.*
-import kotlinx.android.synthetic.main.fragment_update.view.*
 
 class UpdateFragment : Fragment() {
 
@@ -88,7 +87,7 @@ class UpdateFragment : Fragment() {
             val removeMessage = getString(R.string.successfully_removed)
             Toast.makeText(
                 requireContext(),
-                removeMessage + args.currentItem.title,
+                "$removeMessage '${args.currentItem.title}'",
                 Toast.LENGTH_SHORT
             ).show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
