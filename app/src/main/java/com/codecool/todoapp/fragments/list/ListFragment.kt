@@ -70,7 +70,7 @@ class ListFragment : Fragment() {
     }
 
     private fun restoreDeletedData(view: View, deletedItem: ToDoData, position: Int) {
-        val deleteMessage = "Deleted :"
+        val deleteMessage = getString(R.string.deleted)
         val snackbar = Snackbar.make(
             view, deleteMessage + "'${deletedItem.title}'", Snackbar.LENGTH_LONG
         )

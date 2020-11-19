@@ -31,6 +31,7 @@
     <string name="alert_delete_all_title">Delete everything?</string>
     <string name="confirm_delete_all">Are you sure you want to remove everything?</string>
     <string name="undo">Undo</string>
+    <string name="deleted">"Deleted: "</string>
 
     <string-array name="priorities">
         <item>High Priority</item>
