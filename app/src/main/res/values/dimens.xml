@@ -25,4 +25,5 @@
     <dimen name="description_txt_marginbottom">16dp</dimen>
     <dimen name="description_txt_marginend">16dp</dimen>
     <dimen name="recyclerview_paddingtop">8dp</dimen>
+    <dimen name="title_text_marginend">16dp</dimen>
 </resources>
