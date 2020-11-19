@@ -18,6 +18,7 @@ import com.codecool.todoapp.data.viewmodel.ToDoViewModel
 import com.codecool.todoapp.databinding.FragmentListBinding
 import com.codecool.todoapp.fragments.SharedViewModel
 import com.codecool.todoapp.fragments.list.adapter.ListAdapter
+import com.codecool.todoapp.utils.hideKeyboard
 import com.google.android.material.snackbar.Snackbar
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 
@@ -47,6 +48,9 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
         })
 
         setHasOptionsMenu(true)
+
+        hideKeyboard(requireActivity())
+
         return binding.root
     }
 
