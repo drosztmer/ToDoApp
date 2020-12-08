@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/layout_padding"
+    android:background="@color/lightPurple"
     tools:context=".fragments.add.AddFragment">
 
 
@@ -17,7 +18,7 @@
         android:hint="@string/title"
         android:paddingStart="@dimen/add_padding_big"
         android:paddingEnd="@dimen/add_padding_big"
-        android:background="@android:color/transparent"
+        android:background="@drawable/custom_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +43,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:ems="10"
-        android:background="@android:color/transparent"
+        android:background="@drawable/custom_input"
         android:inputType="textMultiLine"
         android:hint="@string/description"
         android:gravity="top|start"
